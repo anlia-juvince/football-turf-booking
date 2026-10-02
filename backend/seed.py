@@ -10,7 +10,7 @@ db = SessionLocal()
 
 existing = db.query(Turf).first()
 if existing:
-    existing.name = "Amlia Hub"
+    existing.name = "AMELIA ARENA"
     existing.city = "Kozhikode"
     existing.address = "Kozhikode, Kerala"
     existing.images = [
@@ -22,7 +22,7 @@ if existing:
     print(f"Updated turf: {existing.name}")
 else:
     turf = Turf(
-        name="Amlia Hub",
+        name="AMELIA ARENA",
         city="Kozhikode",
         address="Kozhikode, Kerala",
         price_per_hour=1000,

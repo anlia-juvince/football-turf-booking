@@ -19,7 +19,9 @@ export default function TurfHeader({ turf }: { turf: Turf }) {
         ))}
       </div>
 
-      <h1 className="text-2xl font-bold">{turf.name}</h1>
+      <h1 className="text-3xl md:text-4xl font-extrabold tracking-wide">
+      {turf.name}
+      </h1>
       <p className="text-slate-600 mt-1">
         {turf.city} · ₹{turf.price_per_hour}/hour · Open{" "}
         {turf.open_time.slice(0, 5)} – {turf.close_time.slice(0, 5)}
