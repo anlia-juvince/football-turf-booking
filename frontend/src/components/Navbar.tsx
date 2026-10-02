@@ -24,7 +24,7 @@ export default function Navbar() {
     <header className="bg-white border-b sticky top-0 z-40">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="font-semibold text-lg">
-          Green Field Arena
+            Amlia Hub
         </Link>
         <nav className="flex items-center gap-1">
           {link("/", "Home")}

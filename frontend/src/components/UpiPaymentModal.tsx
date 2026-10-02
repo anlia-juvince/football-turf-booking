@@ -7,8 +7,8 @@ type Props = {
   onClose: () => void;
 };
 
-const UPI_ID = "greenfield@upi";
-const UPI_NAME = "Green Field Arena";
+const UPI_ID = "amliahub@upi";
+const UPI_NAME = "Amlia Hub";
 
 export default function UpiPaymentModal({ booking, onPaid, onClose }: Props) {
   const upiLink = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(
