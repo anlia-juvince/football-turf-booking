@@ -27,12 +27,10 @@ class Booking(Base):
     hours = Column(Integer, nullable=False, default=1)
     amount = Column(Integer, nullable=False)
 
-    payment_method = Column(String, nullable=False)   # "upi" | "cod"
+    payment_method = Column(String, nullable=False)
     payment_status = Column(String, nullable=False, default="pending")
-    # pending | paid | cod | cod_paid
 
     status = Column(String, nullable=False, default="confirmed")
-    # confirmed | cancelled
 
     created_at = Column(DateTime, default=datetime.utcnow)
 

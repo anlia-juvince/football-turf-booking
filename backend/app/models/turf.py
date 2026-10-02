@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String, Time
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy import Column, Integer, String, Time, JSON
 
 from app.database import Base
 
@@ -14,5 +13,5 @@ class Turf(Base):
     price_per_hour = Column(Integer, nullable=False)
     open_time = Column(Time, nullable=False)
     close_time = Column(Time, nullable=False)
-    images = Column(JSONB, default=list)
-    amenities = Column(JSONB, default=list)
+    images = Column(JSON, default=list)
+    amenities = Column(JSON, default=list)

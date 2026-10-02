@@ -13,7 +13,11 @@ app = FastAPI(title="Football Turf Booking API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        # Add your Vercel URL here after deploying the frontend
+        # "https://your-app.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

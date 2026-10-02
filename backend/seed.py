@@ -1,25 +1,17 @@
-print(">>> seed.py started")
-
 from datetime import time
 
-print(">>> importing database")
 from app.database import SessionLocal, Base, engine
-
-print(">>> importing models")
 from app.models import Turf, booking  # noqa: F401
 
-print(">>> creating tables")
+
 Base.metadata.create_all(bind=engine)
 
-print(">>> opening db session")
 db = SessionLocal()
 
-print(">>> checking for existing turf")
 existing = db.query(Turf).first()
 if existing:
     print(f"Turf already exists: {existing.name}")
 else:
-    print(">>> inserting new turf")
     turf = Turf(
         name="Green Field Arena",
         city="Mumbai",
@@ -44,4 +36,3 @@ else:
     print(f"Inserted turf: {turf.name}")
 
 db.close()
-print(">>> done")
