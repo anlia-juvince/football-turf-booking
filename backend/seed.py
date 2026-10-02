@@ -10,7 +10,13 @@ db = SessionLocal()
 
 existing = db.query(Turf).first()
 if existing:
-    print(f"Turf already exists: {existing.name}")
+    existing.images = [
+        "/turf/photo1.png",
+        "/turf/photo2.png",
+        "/turf/photo3.png",
+    ]
+    db.commit()
+    print(f"Updated images for: {existing.name}")
 else:
     turf = Turf(
         name="Green Field Arena",
@@ -20,9 +26,9 @@ else:
         open_time=time(6, 0),
         close_time=time(23, 0),
         images=[
-            "/turf/photo1.jpg",
-            "/turf/photo2.jpg",
-            "/turf/photo3.jpg",
+            "/turf/photo1.png",
+            "/turf/photo2.png",
+            "/turf/photo3.png",
         ],
         amenities=[
             "Floodlights",
