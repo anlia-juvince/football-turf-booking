@@ -3,13 +3,18 @@ import type { Turf } from "../types";
 export default function TurfHeader({ turf }: { turf: Turf }) {
   return (
     <div className="bg-white rounded-2xl shadow-sm p-6 mb-6">
-      <div className="grid grid-cols-3 gap-2 mb-4">
-        {turf.images.slice(0, 3).map((_img, i) => (
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
+        {turf.images.slice(0, 3).map((img, i) => (
           <div
             key={i}
-            className="aspect-video bg-slate-100 rounded-xl flex items-center justify-center text-slate-400 text-sm"
+            className="aspect-video bg-slate-100 rounded-xl overflow-hidden"
           >
-            Photo {i + 1}
+            <img
+              src={img}
+              alt={`${turf.name} photo ${i + 1}`}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>
